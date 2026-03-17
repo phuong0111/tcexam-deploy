@@ -19,7 +19,7 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 # --- KEY CHANGE: Copy from the build context root ---
-# Copies ~/XP/tcexam-docker/source_code/tcexam -> /var/www/html
+# Copies ~/XP/tcexam-deploy/source_code/tcexam -> /var/www/html
 COPY source_code/ .
 
 # Copy entrypoint from the linux folder

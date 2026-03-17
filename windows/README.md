@@ -1,5 +1,7 @@
 # Offline Portable USB Deployment Guide for TCExam
 
+[English](README.md) | [🇻🇳 Tiếng Việt](README_vn.md)
+
 This guide will walk you through creating a "plug-and-run" USB stick that will launch the TCExam application on any Windows computer without requiring administrator privileges, internet access, or software installation.
 
 ## Prerequisites
@@ -36,7 +38,7 @@ For portable XAMPP to configure its internal paths correctly on whichever drive 
 Now we need to place the application code inside XAMPP's web directory.
 1.  Navigate to the `htdocs` directory within your XAMPP installation on the USB (`E:\xampp\htdocs`).
 2.  Delete any existing files in `htdocs` (like `index.php` or `dashboard` folder) to keep things clean.
-3.  Copy the `tcexam` folder (the one inside your `source_code` directory: `/Users/admin/Desktop/php/tcexam-docker/source_code/tcexam`) into `htdocs`.
+3.  Copy the `tcexam` folder (the one inside the `source_code` directory of this repository) into `htdocs`.
 4.  Your path should look like this: `E:\xampp\htdocs\tcexam`.
 
 ### Step 5: Start the Servers
