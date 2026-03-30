@@ -21,9 +21,10 @@ cd tcexam-deploy && mkdir source_code
 cd source_code
 ```
 
-4. **Clone the TCExam source code:**
+4. **Clone the TCExam source code and initialize configuration:**
 ```bash
 git clone https://github.com/phuong0111/tcexam.git
+cp -r tcexam/shared/config.example tcexam/shared/config
 ```
 
 5. **Navigate to the Linux configuration directory:**

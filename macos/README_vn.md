@@ -21,9 +21,10 @@ cd tcexam-deploy && mkdir source_code
 cd source_code
 ```
 
-4. **Sao chép mã nguồn TCExam:**
+4. **Sao chép mã nguồn TCExam và khởi tạo cấu hình:**
 ```bash
 git clone https://github.com/phuong0111/tcexam.git
+cp -r tcexam/shared/config.example tcexam/shared/config
 ```
 
 5. **Điều hướng đến thư mục cấu hình macOS:**
