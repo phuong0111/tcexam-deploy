@@ -5,9 +5,10 @@
 This guide will walk you through creating a "plug-and-run" USB stick that will launch the TCExam application on any Windows computer without requiring administrator privileges, internet access, or software installation.
 
 ## Prerequisites
-*   A USB Flash Drive (at least 2GB of free space recommended).
-*   A computer with internet access (to download the necessary files initially).
-*   Your existing TCExam source code that you cloned earlier.
+
+- A USB Flash Drive (at least 2GB of free space recommended).
+- A computer with internet access (to download the necessary files initially).
+- Your existing TCExam source code that you cloned earlier.
 
 ---
 
@@ -29,6 +30,7 @@ We will use XAMPP Portable because it completely encapsulates Apache (web server
 ### Step 3: Run the Setup Script
 
 For portable XAMPP to configure its internal paths correctly on whichever drive letter it's assigned to:
+
 1.  Open the `xampp` folder on your USB drive.
 2.  Double-click **`setup_xampp.bat`**.
 3.  A command prompt will briefly appear, updating configuration files. Press enter when it prompts you to finish.
@@ -36,6 +38,7 @@ For portable XAMPP to configure its internal paths correctly on whichever drive 
 ### Step 4: Copy TCExam Source Code
 
 Now we need to place the application code inside XAMPP's web directory.
+
 1.  Navigate to the `htdocs` directory within your XAMPP installation on the USB (`E:\xampp\htdocs`).
 2.  Delete any existing files in `htdocs` (like `index.php` or `dashboard` folder) to keep things clean.
 3.  Copy the `tcexam` folder (the one inside the `source_code` directory of this repository) into `htdocs`.
@@ -46,7 +49,7 @@ Now we need to place the application code inside XAMPP's web directory.
 1.  Go back to the root of the `xampp` folder (`E:\xampp`).
 2.  Double-click **`xampp-control.exe`**.
 3.  The control panel will appear. Click **Start** next to **Apache** and **Start** next to **MySQL**.
-    *(If Windows Firewall prompts you, click "Allow access").*
+    _(If Windows Firewall prompts you, click "Allow access")._
 
 ### Step 6: Create the Database
 
@@ -88,9 +91,21 @@ XAMPP's default MySQL root user has **no password**. We need to tell TCExam this
     ```
 4.  Save and close the file.
 
-### Step 9: Launch the Application!
+### Step 9: Configure TCExam Main Path
+
+We need to ensure the main path in TCExam is set properly.
+
+1.  In the same folder `E:\xampp\htdocs\tcexam\shared\config`, open **`tce_paths.php`** with a text editor.
+2.  Find the line for `K_PATH_MAIN` and change it to the following:
+    ```php
+    define('K_PATH_MAIN', 'E:\\xampp\\htdocs\\tcexam\\');
+    ```
+3.  Save and close the file.
+
+### Step 10: Launch the Application!
 
 Everything is set up. To run it:
+
 1.  Open any web browser.
 2.  Navigate to: `http://localhost/tcexam`
 3.  You should see the TCExam interface.
@@ -105,4 +120,4 @@ Everything is set up. To run it:
 3.  Open the USB drive, open the `xampp` folder.
 4.  Launch `xampp-control.exe` and start **Apache** and **MySQL**.
 5.  Open a web browser and go to `http://localhost/tcexam`.
-6.  *When finished:* Stop the servers in the control panel before unplugging the USB.
+6.  _When finished:_ Stop the servers in the control panel before unplugging the USB.
